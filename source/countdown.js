@@ -56,7 +56,7 @@ function startCountdown(endTime, title) {
   });
 
   // Save countdowns to localStorage
-  updateLocalStorage();
+  localStorage.setItem("countdowns", JSON.stringify(countdowns));
 }
 
 function loadCountdowns() {
@@ -64,25 +64,8 @@ function loadCountdowns() {
   const savedCountdowns = JSON.parse(localStorage.getItem("countdowns")) || [];
   countdowns = savedCountdowns;
 
-  // Clear existing countdowns from the page
-  const countdownContainer = document.getElementById("countdown-container");
-  countdownContainer.innerHTML = "";
-
   // Start or resume saved countdowns
   countdowns.forEach((countdown) => {
-    startCountdown(countdown.endTime, countdown.title);
-  });
-}
-
-function loadCountdowns() {
-  // Clear existing countdowns
-  countdowns = [];
-
-  // Load countdowns from localStorage
-  const savedCountdowns = JSON.parse(localStorage.getItem("countdowns")) || [];
-
-  // Start or resume saved countdowns
-  savedCountdowns.forEach((countdown) => {
     startCountdown(countdown.endTime, countdown.title);
   });
 }
@@ -133,15 +116,6 @@ function updateCountdowns() {
     }
   });
   localStorage.setItem("countdowns", JSON.stringify(countdowns));
-}
-
-function clearCountdowns() {
-  // Clear countdowns from memory and the HTML container
-  countdowns.forEach((countdown) => {
-    countdown.card.remove();
-    clearInterval(countdown.interval);
-  });
-  countdowns = [];
 }
 
 window.addEventListener("load", () => {
