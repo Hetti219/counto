@@ -9,7 +9,7 @@ No installation needed! Just go to https://counto.w3spaces.com/ and start adding
 You can add the countdowns by clicking on the **+** sign.
 Add the title of the countdown.
 Select the Date and Time.
-Then click on **Add**
+Then click on **Add**.
 
 ## Features
 
