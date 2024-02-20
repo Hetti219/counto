@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>CountO</h1>
+    <div id="countdown-container"></div>
+    <button class="add-button" id="toggle-add">+</button>
+    <div id="add-container" class="countdown-card">
+      <h2>Add Countdown</h2>
+      <input type="text" id="event-title-input" placeholder="Event Title" />
+      <input type="datetime-local" id="event-time-input" />
+      <button onclick="addCountdown()">Add</button>
+    </div>
+
+    <script src="countdown.js" type="text/javascript" async defer></script>
+  </body>
+</html>
